@@ -1,0 +1,63 @@
+it's a notation to describe abstract types and values.
+it diffirent information, not representaion.
+
+
+- similar to XML schema, however:
+1- is rich with built in types
+2- not ties to a particular encoding mechanisim
+
+example: 
+
+
+——
+ASN.1 module
+MyQAProtocol DEFINITIONS ::= BEGIN
+
+MyQuestion ::= SEQUENCE { id INTEGER (0..999),
+text UTF8String
+}
+
+MyAnswer ::= SEQUENCE { id INTEGER (0..999), text UTF8String
+new type defined
+}
+END
+
+
+Data types:
+
+Null - possible values are Null
+Boolean - true or false
+Real - mantissa, base, exponent
+Octet string - 0x00 ..... 0xff
+Bit string - 0s and 1s
+UTF8 - UTF-8 characters
+NumericString - [space]0123456789
+IA5String - ascii chars
+UTCTime - 'YYMMDDhhmmssZ'
+
+and more...
+
+
+
+
+ASN.1 structured types:
+
+// random order for "SEQUENCE"
+YearInfo := SEQUENCE { 
+    year INTEGER (0..9999),
+    isLeap Year BOOLEAN
+}
+// for "SET" the values are orederd
+Person ::= SET{
+    name IA5String,
+    age INTEGER,
+    female BOOLEAN
+}
+// only one value has to be present
+Prize ::= CHOICE {
+    car  IA5String,
+    cash INTEGER,
+    nothing NULL
+}
+
+

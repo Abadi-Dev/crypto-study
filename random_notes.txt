@@ -1,0 +1,10 @@
+- encryption does not provide integrity,
+    if an atacker play or modify the ciphertext,
+    the decryptor would not know because the encryption does
+    not guarntee integrity, but provide confidentiality.
+
+    for example if an attacker knows where a specific value lies
+    in the ciphertext,
+    he can change the bits by flipping them resulting in
+    a diffirent value in the plaintext
+
